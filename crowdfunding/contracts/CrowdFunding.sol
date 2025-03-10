@@ -8,7 +8,7 @@ import "@openzeppelin/contracts/utils/Base64.sol";
 
 contract CrowdFunding is ERC721URIStorage {
     address public owner;
-    uint256 public fixedAmount = 1 ether;
+    uint256 public fixedAmount = 0.01 ether;
     uint256 public totalAmount;
     uint256 public goal = 10 ether;
     uint256 private tokenID;
