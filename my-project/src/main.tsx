@@ -8,22 +8,20 @@ import { WagmiProvider, createConfig, http } from 'wagmi';
 import { getDefaultConfig, RainbowKitProvider } from '@rainbow-me/rainbowkit';
 import './index.css';
 
-// Create a client for TanStack Query
 const queryClient = new QueryClient();
 
-// Configure chains and connectors for Wagmi and RainbowKit
+
 const config = getDefaultConfig({
   appName: 'Your Crowdfunding dApp',
-  projectId: 'YOUR_WALLET_CONNECT_PROJECT_ID', // Get one at https://cloud.walletconnect.com
+  projectId: 'YOUR_WALLET_CONNECT_PROJECT_ID',
   chains: [sepolia, mainnet],
   transports: {
     [sepolia.id]: http(),
     [mainnet.id]: http(),
   },
-  ssr: true, // Set to true if using Next.js
+  ssr: true, 
 });
 
-// Render the App
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
   <React.StrictMode>
